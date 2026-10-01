@@ -17,7 +17,7 @@ walk through any of it.
 
 ## 1. What's in this package
 
-```
+```bash
 mine34_live              compiled arm64 miner (Metal solver + stratum + submit)
 run.sh                   simple foreground run (honors env / args)
 run-no-telemetry.sh      foreground run with telemetry + steering forced OFF
@@ -48,7 +48,7 @@ The miner links only system frameworks: `Metal`, `Foundation`,
 
 ## 3. Quick start
 
-```sh
+```shell
 # 0. (only if copied/downloaded through quarantine)
 xattr -dr com.apple.quarantine .
 chmod +x *.sh mine34_live debug/strat_probe scheduler/m1_scheduler
@@ -68,7 +68,7 @@ shasum -a 256 -c SHA256SUMS
 
 Expected startup:
 
-```
+```mm
 cuckatoo32 FAST miner: nb=32768 coarse=128 fine_n=256 rounds=160 maxkeys=... mem~74GB
 LIVE: logged in to 127.0.0.1:3416 as m1miner (C32, 160 rounds)
 NEW JOB height=... job_id=...
@@ -85,7 +85,7 @@ building real block templates, which requires the **treasury wallet** to be
 listening so the node can fetch a coinbase. Expected local ports:
 
 - wallet foreign listener: `127.0.0.1:3417`
-- node owner API:          `127.0.0.1:3413`
+- node owner API:          `127.0.0.1:3413` `127.0.0.1:3333`
 - node stratum:            `127.0.0.1:3416`
 
 Bring up the **wallet listener first, then the node.** The node's
@@ -113,7 +113,7 @@ Env vars override the file, e.g. `M1_STRATUM_HOST=10.0.0.5 ./run.sh`.
 
 ## 6. Run headless (supervised)
 
-```sh
+```shell
 ./start.sh            # detached: logs to ./logs/miner-<ts>.log, pidfile, auto-restart
 ./start.sh -f         # foreground (live console)
 tail -f logs/miner-*.log
@@ -140,7 +140,7 @@ Validated live against a local grin 5.4.0 node + wallet.
 
 **Throughput** (warm hot-path; cold graph 0 excluded):
 
-```
+```pwsh
 target floor:       0.53 graphs/second
 validated average:  0.540887 graphs/second  (27 warm samples, ~1.85 s/graph)
 cold key 0:         5.160 s  (program start + Metal setup + first-touch, excluded)
@@ -152,7 +152,7 @@ Representative warm per-graph timings: `key 1..5` ≈ 1.846–1.863 s; steady
 **Correctness** (every recovered candidate verified before submit, using the
 ported Tromp `verify()`):
 
-```
+```rs
 found=22 ok=22 fail=0 submitted=22  across 1124 graphs
 node_accepted_current_run=22  node_reject_errors_current_run=0
 ```
@@ -167,11 +167,9 @@ not an exhaustive per-graph cycle enumeration.
 
 ## 9. Verify package files
 
-```sh
+```shell
 shasum -a 256 -c SHA256SUMS
 file mine34_live          # -> Mach-O 64-bit executable arm64
 ```
 
 ---
-
-*Source and a write-up of the methods to follow. Questions and review welcome. Donations and loose change can be sent here: bc1qwg6mz4tn2cy3he4zyw4sfg7avf3vl7x7lmayv9 Thanks for the support*
