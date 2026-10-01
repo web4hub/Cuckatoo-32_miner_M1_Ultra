@@ -1,0 +1,22 @@
+cuckatoo32 FAST miner: nb=32768 coarse=128 fine_n=256 rounds=160 maxkeys=100 mem~93GB
+MEM: device allocated=93.45GB recommendedMaxWorkingSet=103.08GB headroom=9.63GB
+D2: mode=abort cut=64 emit_cap=16777216 buffers=0.67GB
+LIVE: logged in to 127.0.0.1:3416 as m1miner (C32, 160 rounds)
+TELEMETRY: ON path=/Users/ec2-user/m1_grin_miner_fastest/proof/receipts_v2_100graphs.jsonl rotate_mb=256.000 keep_files=4
+FIXED-KEY MODE: pinned pre_pow 1 bytes, nonce 0..99, 160 trim rounds (no stratum)
+STEERER: OFF (set M1_STEER=<thresh> to enable parallel pre-filter)
+RBATCH: 16 rounds/cmdbuf (c02 batched rounds, GPU blit clears)
+key 0: 2core=0 | seed 2.776 round 2.499 (GPU 2.332, sync 0.167) peel 0.000 recover 0.000 | WALL 5.276s | d2[abort@64] n=3744122 arcs=3744551 cand=0 would_abort ABORT
+key 1: 2core=0 | seed 0.180 round 1.220 (GPU 0.984, sync 0.237) peel 0.000 recover 0.000 | WALL 1.400s | d2[abort@64] n=3779548 arcs=3780377 cand=0 would_abort ABORT
+key 2: 2core=0 | seed 0.180 round 1.126 (GPU 0.983, sync 0.143) peel 0.000 recover 0.000 | WALL 1.306s | d2[abort@64] n=3714106 arcs=3713286 cand=0 would_abort ABORT
+key 3: 2core=0 | seed 0.180 round 1.146 (GPU 0.983, sync 0.162) peel 0.000 recover 0.000 | WALL 1.326s | d2[abort@64] n=3726236 arcs=3724900 cand=0 would_abort ABORT
+key 4: 2core=0 | seed 0.180 round 1.126 (GPU 0.983, sync 0.142) peel 0.000 recover 0.000 | WALL 1.306s | d2[abort@64] n=3763401 arcs=3763698 cand=0 would_abort ABORT
+key 5: 2core=0 | seed 0.180 round 1.153 (GPU 0.990, sync 0.163) peel 0.000 recover 0.000 | WALL 1.333s | d2[abort@64] n=3726975 arcs=3726039 cand=0 would_abort ABORT
+  d2_witness: VERIFIED 42-edge lift -> tail skipped (0.703s)
+
+[69.2s] 42-CYCLE found! nonce=45 height=1 job_id=0 Tromp verify=POW_OK
+key 50: 2core=0 | seed 0.180 round 1.129 (GPU 0.987, sync 0.143) peel 0.000 recover 0.000 | WALL 1.310s | d2[abort@64] n=3768730 arcs=3770010 cand=0 would_abort ABORT
+  d2_witness: VERIFIED 42-edge lift -> tail skipped (0.237s)
+
+[110.1s] 42-CYCLE found! nonce=74 height=1 job_id=0 Tromp verify=POW_OK
+done: mined 100 graphs, 2 sols | scorer scanned 0, skipped 0 (0% skip) | 145.2s
