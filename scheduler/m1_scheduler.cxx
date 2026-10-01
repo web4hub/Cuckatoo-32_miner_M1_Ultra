@@ -1,4 +1,4 @@
-// m1_scheduler.c: async stratum proxy/scheduler between the miner and the grin node.
+// m1_scheduler.cxx: async stratum proxy/scheduler between the miner and the grin node.
 //
 // The miner itself is never modified; it just connects here instead of the node (a different
 // port). Async via poll() on both sockets, single process, no threads.
